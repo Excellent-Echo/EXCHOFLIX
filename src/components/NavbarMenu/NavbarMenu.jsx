@@ -1,7 +1,7 @@
-import React from 'react';
-import { Navbar, Nav, NavDropdown, Form, FormControl} from 'react-bootstrap';
-import './NavbarMenu.css';
-import {Link} from 'react-router-dom';
+import React from 'react'
+import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap'
+import './NavbarMenu.css'
+import { Link } from 'react-router-dom'
 
 const NavbarMenu = () => {
     return (
@@ -36,6 +36,7 @@ const NavbarMenu = () => {
             </Navbar>
         </>
     )
+
 }
 
-export default NavbarMenu;
+export default NavbarMenu

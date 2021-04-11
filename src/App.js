@@ -25,7 +25,7 @@ function App() {
 						<PopularMovies/>
 					</Route>
 					<Route path="/">
-						<HomePage/>
+						<HomePage />
 					</Route>
 				</Switch>
 			</Router>
@@ -34,3 +34,4 @@ function App() {
 }
 
 export default App;
+

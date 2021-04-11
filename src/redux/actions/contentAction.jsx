@@ -1,10 +1,11 @@
 import HelperAPI from '../../API/HelperAPI'
-import { SET_TRENDING, SET_POPULAR_MOVIES, SET_NOW_PLAYING_MOVIES, SET_UPCOMING_MOVIES, SET_TOP_RATED_MOVIES } from '../actionTypes/contentActionTypes'
+import { SET_TRENDING, SET_POPULAR_MOVIES, SET_NOW_PLAYING_MOVIES, SET_UPCOMING_MOVIES, SET_TOP_RATED_MOVIES, SET_FREE_WATCH } from '../actionTypes/contentActionTypes'
 
 const setTrending = () => async (dispatch) => {
 	try {
-		const content = await HelperAPI.trending({
-			method: 'get'
+		const content = await HelperAPI({
+			method: 'get',
+			url: `/trending/all/week?api_key=${apiKey}&language=en-US`
 		})
 
 		dispatch({
@@ -20,14 +21,32 @@ const setTrending = () => async (dispatch) => {
 
 const setPopularMovies = () => async (dispatch) => {
 	try {
-		const content = await HelperAPI.popularMovies({
-			method: 'get'
+		const content = await HelperAPI({
+			method: 'get',
+			url: `/movie/popular?api_key=${apiKey}&language=en-US&page=1`
 		})
 		console.log(content);
 
 		dispatch({
 			type: SET_POPULAR_MOVIES,
 			payload: {
+				content: content.data.results
+			}
+		})
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+const setFreetoWatch = () => async (dispatch) => {
+	try {
+		const content = await HelperAPI.freetoWatch({
+      method: 'get'
+    })
+    
+    	dispatch({
+			type: SET_FREE_WATCH,
+        payload: {
 				content: content.data.results
 			}
 		})
@@ -95,7 +114,8 @@ const contentAction = {
 	setPopularMovies,
 	setNowPlayingMovies,
 	setUpcomingMovies,
-	setTopRatedMovies
+	setTopRatedMovies,
+  setFreetoWatch
 }
 
-export default contentAction;
+export default contentAction
