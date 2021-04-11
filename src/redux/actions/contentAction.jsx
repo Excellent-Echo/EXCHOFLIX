@@ -25,6 +25,7 @@ const setPopularMovies = () => async (dispatch) => {
 			method: 'get',
 			url: `/movie/popular?api_key=${apiKey}&language=en-US&page=1`
 		})
+		console.log(content);
 
 		dispatch({
 			type: SET_POPULAR_MOVIES,
@@ -59,10 +60,11 @@ const setNowPlayingMovies = () => async (dispatch) => {
 		const content = await HelperAPI.nowPlayingMovies({
 			method: 'get'
 		})
-    
-    dispatch({
-			 type: SET_NOW_PLAYING_MOVIES,
-        payload: {
+		console.log(content);
+
+		dispatch({
+			type: SET_NOW_PLAYING_MOVIES,
+			payload: {
 				content: content.data.results
 			}
 		})
@@ -76,6 +78,7 @@ const setUpcomingMovies = () => async (dispatch) => {
 		const content = await HelperAPI.upcomingMovies({
 			method: 'get'
 		})
+		console.log(content);
 
 		dispatch({
 			type: SET_UPCOMING_MOVIES,
@@ -103,7 +106,6 @@ const setTopRatedMovies = () => async (dispatch) => {
 		})
 	} catch (error) {
 		console.log(error)
-
 	}
 }
 
@@ -114,7 +116,6 @@ const contentAction = {
 	setUpcomingMovies,
 	setTopRatedMovies,
   setFreetoWatch
-
 }
 
 export default contentAction

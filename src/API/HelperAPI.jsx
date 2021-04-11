@@ -22,18 +22,12 @@ const upcomingMovies = axios.create({
 	baseURL: `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
 });
 
-const freetoWatch = axios.create({
-	baseURL: 'https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US'
-
-})
-
 const HelperAPI = {
 	trending,
 	popularMovies,
 	nowPlayingMovies,
 	topRatedMovies,
-	upcomingMovies,
-  freetoWatch
+	upcomingMovies
 };
 
 export default HelperAPI;
