@@ -1,6 +1,5 @@
 import HelperAPI from '../../API/HelperAPI'
-import apiKey from '../../API/APIKey'
-import { SET_TRENDING, SET_POPULAR_MOVIES, SET_SEARCH_RESULT } from '../actionTypes/contentActionTypes'
+import { SET_TRENDING, SET_POPULAR_MOVIES, SET_NOW_PLAYING_MOVIES, SET_UPCOMING_MOVIES, SET_TOP_RATED_MOVIES, SET_FREE_WATCH } from '../actionTypes/contentActionTypes'
 
 const setTrending = () => async (dispatch) => {
 	try {
@@ -26,6 +25,7 @@ const setPopularMovies = () => async (dispatch) => {
 			method: 'get',
 			url: `/movie/popular?api_key=${apiKey}&language=en-US&page=1`
 		})
+		console.log(content);
 
 		dispatch({
 			type: SET_POPULAR_MOVIES,
@@ -38,18 +38,71 @@ const setPopularMovies = () => async (dispatch) => {
 	}
 }
 
-const setSearchResult = (query) => async (dispatch) => {
+const setFreetoWatch = () => async (dispatch) => {
 	try {
-		const content = await HelperAPI({
-			method: 'get',
-			url: `/search/multi?api_key=${apiKey}&language=en-US&query=${query}&page=1`
+		const content = await HelperAPI.freetoWatch({
+      method: 'get'
+    })
+    
+    	dispatch({
+			type: SET_FREE_WATCH,
+        payload: {
+				content: content.data.results
+			}
 		})
+	} catch (error) {
+		console.log(error)
+	}
+}
 
-		console.log(content)
+const setNowPlayingMovies = () => async (dispatch) => {
+	try {
+		const content = await HelperAPI.nowPlayingMovies({
+			method: 'get'
+		})
+		console.log(content);
 
 		dispatch({
-			type: SET_SEARCH_RESULT,
-			payload: {}
+			type: SET_NOW_PLAYING_MOVIES,
+			payload: {
+				content: content.data.results
+			}
+		})
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+const setUpcomingMovies = () => async (dispatch) => {
+	try {
+		const content = await HelperAPI.upcomingMovies({
+			method: 'get'
+		})
+		console.log(content);
+
+		dispatch({
+			type: SET_UPCOMING_MOVIES,
+			payload: {
+				content: content.data.results
+			}
+		})
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+const setTopRatedMovies = () => async (dispatch) => {
+	try {
+		const content = await HelperAPI.topRatedMovies({
+			method: 'get'
+		})
+		console.log(content);
+
+		dispatch({
+			type: SET_TOP_RATED_MOVIES,
+			payload: {
+				content: content.data.results
+			}
 		})
 	} catch (error) {
 		console.log(error)
@@ -59,7 +112,10 @@ const setSearchResult = (query) => async (dispatch) => {
 const contentAction = {
 	setTrending,
 	setPopularMovies,
-	setSearchResult
+	setNowPlayingMovies,
+	setUpcomingMovies,
+	setTopRatedMovies,
+  setFreetoWatch
 }
 
 export default contentAction

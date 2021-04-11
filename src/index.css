@@ -11,7 +11,7 @@ body {
 
 /* Jumbotron */
 .jumbotron {
-  background-image: url(./assets/jumbotron-bg.webp);
+  background-image: url("./assets/jumbotron-bg.webp");
   -webkit-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -o-background-size: 100% 100%;
@@ -34,7 +34,10 @@ body {
 }
 /* Jumbotron */
 
-.popularMoviesContainer {
+.popularMoviesContainer,
+.nowPlayingMoviesContainer,
+.topRatedMoviesContainer,
+.upcomingMoviesContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1rem;

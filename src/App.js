@@ -1,8 +1,10 @@
-import NavbarMenu from './components/NavbarMenu/NavbarMenu'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import PopularMovie from './pages/PopularMovies'
-import HomePage from './pages/Homepage'
-import SearchResult from './pages/SearchResult'
+import NavbarMenu from './components/NavbarMenu/NavbarMenu';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import PopularMovies from'./pages/PopularMovies';
+import NowPlayingMovies from'./pages/NowPlayingMovies';
+import TopRatedMovies from'./pages/TopRatedMovies';
+import UpcomingMovies from'./pages/UpcomingMovies';
+import HomePage from './pages/Homepage';
 
 function App() {
 	return (
@@ -10,11 +12,17 @@ function App() {
 			<Router>
 				<NavbarMenu />
 				<Switch>
-					<Route path="/popular-movies">
-						<PopularMovie />
+					<Route path="/upcoming-movies">
+						<UpcomingMovies/>
 					</Route>
-					<Route path="/search">
-						<SearchResult />
+					<Route path="/top-rated-movies">
+						<TopRatedMovies/>
+					</Route>
+					<Route path="/now-playing-movies">
+						<NowPlayingMovies/>
+					</Route>
+					<Route path="/popular-movies">
+						<PopularMovies/>
 					</Route>
 					<Route path="/">
 						<HomePage />
@@ -25,4 +33,5 @@ function App() {
 	)
 }
 
-export default App
+export default App;
+
