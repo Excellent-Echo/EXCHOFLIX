@@ -1,10 +1,20 @@
 import React from 'react'
+import ResultCard from '../components/ResultCard/ResultCard'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const SearchResult = () => {
 	return (
-		<div>
-			<h1>Search Result Page</h1>
-		</div>
+		<Container>
+			<Row>
+				<Col sm={3}>
+					<h1>Search Result Page</h1>
+				</Col>
+
+				<Col>
+					<ResultCard />
+				</Col>
+			</Row>
+		</Container>
 	)
 }
 
