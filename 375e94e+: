@@ -1,6 +1,0 @@
-fatal: You are not currently on a branch.
-To push the history leading to the current (detached HEAD)
-state now, use
-
-    git push origin HEAD:<name-of-remote-branch>
-
