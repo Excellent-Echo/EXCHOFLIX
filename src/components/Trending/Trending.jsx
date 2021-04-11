@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Container } from 'react-bootstrap';
-import contentAction from '../../redux/actions/contentAction';
-import MediaCard from '../MediaCard/MediaCard';
-import { CardContainer } from '../styles/ScrollingContent';
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { Container } from 'react-bootstrap'
+import contentAction from '../../redux/actions/contentAction'
+import MediaCard from '../MediaCard/MediaCard'
+import { CardContainer } from '../styles/ScrollingContent'
 
 const Trending = () => {
 	const dispatch = useDispatch()
 	const content = useSelector((state) => state.content)
-
-	console.log(content)
 
 	useEffect(() => {
 		dispatch(contentAction.setTrending())
@@ -27,4 +25,4 @@ const Trending = () => {
 	)
 }
 
-export default Trending;
+export default Trending

@@ -1,10 +1,12 @@
 import HelperAPI from '../../API/HelperAPI'
-import { SET_TRENDING, SET_POPULAR_MOVIES } from '../actionTypes/contentActionTypes'
+import apiKey from '../../API/APIKey'
+import { SET_TRENDING, SET_POPULAR_MOVIES, SET_SEARCH_RESULT } from '../actionTypes/contentActionTypes'
 
 const setTrending = () => async (dispatch) => {
 	try {
-		const content = await HelperAPI.trending({
-			method: 'get'
+		const content = await HelperAPI({
+			method: 'get',
+			url: `/trending/all/week?api_key=${apiKey}&language=en-US`
 		})
 
 		dispatch({
@@ -20,10 +22,10 @@ const setTrending = () => async (dispatch) => {
 
 const setPopularMovies = () => async (dispatch) => {
 	try {
-		const content = await HelperAPI.popularMovies({
-			method: 'get'
+		const content = await HelperAPI({
+			method: 'get',
+			url: `/movie/popular?api_key=${apiKey}&language=en-US&page=1`
 		})
-		console.log(content);
 
 		dispatch({
 			type: SET_POPULAR_MOVIES,
@@ -36,9 +38,28 @@ const setPopularMovies = () => async (dispatch) => {
 	}
 }
 
-const contentAction = {
-	setTrending,
-	setPopularMovies
+const setSearchResult = (query) => async (dispatch) => {
+	try {
+		const content = await HelperAPI({
+			method: 'get',
+			url: `/search/multi?api_key=${apiKey}&language=en-US&query=${query}&page=1`
+		})
+
+		console.log(content)
+
+		dispatch({
+			type: SET_SEARCH_RESULT,
+			payload: {}
+		})
+	} catch (error) {
+		console.log(error)
+	}
 }
 
-export default contentAction;
+const contentAction = {
+	setTrending,
+	setPopularMovies,
+	setSearchResult
+}
+
+export default contentAction
