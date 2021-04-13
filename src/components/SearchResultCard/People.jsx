@@ -8,7 +8,6 @@ const MovieTV = ({ value, index }) => {
 	const knownFor = value.known_for
 		.map((value, index) => (value.media_type === 'tv' ? value.name : value.title))
 		.join(', ')
-	console.log(knownFor)
 
 	const peopleImage = value.profile_path ? `https://image.tmdb.org/t/p/w92${value.profile_path}` : default_placeholder
 

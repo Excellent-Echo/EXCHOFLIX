@@ -47,5 +47,9 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 1rem;
 }
+
+.sticky-nav {
+  top: 0;
+}
   
 
