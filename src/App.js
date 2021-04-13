@@ -14,7 +14,7 @@ import AiringTodayTVShows from './pages/TVShows/AiringTodayTVShows'
 import OnTheAirTVShows from './pages/TVShows/OnTheAirTVShows'
 import TopRatedTVShows from './pages/TVShows/TopRatedTVShows'
 
-// import FooterWeb from './components/Footer/Footer'
+import Footer from './components/Footer/Footer.jsx'
 import SearchResult from './pages/SearchResult'
 
 function App() {
@@ -54,8 +54,8 @@ function App() {
 						<Home />
 					</Route>
 				</Switch>
+				<Footer />
 			</Router>
-			{/* <FooterWeb /> */}
 		</>
 	)
 }

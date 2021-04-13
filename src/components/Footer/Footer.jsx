@@ -1,92 +1,48 @@
-// import React from 'react'
-// import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import React from 'react';
+import './Footer.css';
 
-// const FooterWeb = () => {
-// 	return (
-// 		<MDBFooter color="blue" className="font-small pt-4 mt-4">
-// 			<MDBContainer fluid className="text-center text-md-left">
-// 				<MDBRow>
-// 					<MDBCol md="3">
-// 						<h5 className="title">
-// 							<box-icon name="movie-play"></box-icon>Exchoflix
-// 						</h5>
-// 						<p>Providing movies that always up to date!</p>
-// 					</MDBCol>
-// 					<MDBCol md="2">
-// 						<h5 className="title">THE BASIC</h5>
-// 						<ul>
-// 							<li className="list-unstyled">
-// 								<a href="#!">About Exchoflix</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Contact Us</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Support Forums</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">API</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">System Status</a>
-// 							</li>
-// 						</ul>
-// 					</MDBCol>
-// 					<MDBCol md="2">
-// 						<h5 className="title">GET INVOLVED</h5>
-// 						<ul>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Contribution Bible</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">3rd Party Applications</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Add New Movie</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Add New TV Show</a>
-// 							</li>
-// 						</ul>
-// 					</MDBCol>
-// 					<MDBCol md="2">
-// 						<h5 className="title">COMMUNITY</h5>
-// 						<ul>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Guidelines</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Discussions</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Leaderboard</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Twitter</a>
-// 							</li>
-// 						</ul>
-// 					</MDBCol>
-// 					<MDBCol md="2">
-// 						<h5 className="title">LEGAL</h5>
-// 						<ul>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Terms of Use</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">API Terms of Use</a>
-// 							</li>
-// 							<li className="list-unstyled">
-// 								<a href="#!">Privacy Policy</a>
-// 							</li>
-// 						</ul>
-// 					</MDBCol>
-// 				</MDBRow>
-// 			</MDBContainer>
-// 			<div className="footer-copyright text-center py-3">
-// 				<MDBContainer fluid>&copy; {new Date().getFullYear()} Copyright: Excho</MDBContainer>
-// 			</div>
-// 		</MDBFooter>
-// 	)
-// }
+const Footer = () => {
+    return (
+        <>
+        <footer class="justify-content-center">
+        <nav class="container">
+            <div class="footer-top">
+                <div class="footer-top-1">
+                    <h3>Exchoflix</h3>
+                    <p>
+                        Watch movies <br />
+                        Up to date!
+                    </p>
+                </div>
+                <div class="footer-top-2">
+                    <h5>Excellent Echo Project</h5>
+                    <h6><a href="https://impactsport.netlify.app" target="_blank">Impact Sport</a></h6>
+                    <h6><a href="https://echo-noted.netlify.app" target="_blank">Excho Restaurant</a></h6>
+                    <h6><a href="https://exo-travel.netlify.app" target="_blank">Exo Trans</a>
+                    </h6>
+                </div>
+                <div class="footer-top-3">
+                    <h5>Contact Us</h5>
+                    <h6>support@excho.com</h6>
+                    <h6>012 - 3456 - 7890</h6>
+                    <h6>Indonesia</h6>
+                </div>
+                <div class="footer-top-4">
+                    <h5>Our Social Media</h5>
+                    
+                    <a href="" class="nav_link" target="_blank"><box-icon type='logo' name='facebook-circle'></box-icon></a>
+                    <a href="" class="nav_link" target="_blank"><i class="bx bxl-instagram"></i></a>
+                    <a href="" class="nav_link" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="" class="nav_link" target="_blank"><i class="bx bxl-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy 2021. All Right Reserved. By <a href="#team">Excho Teams</a> with <i class='bx bxs-heart'></i></p>
+            </div>
+        </nav>
+    </footer>
+    </>
+    )
+}
 
-// export default FooterWeb
+export default Footer;
