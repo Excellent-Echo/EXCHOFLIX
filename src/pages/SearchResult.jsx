@@ -15,19 +15,10 @@ const SearchResult = () => {
 	const dispatch = useDispatch()
 	let query = useQuery()
 	const searchResult = useSelector((state) => state.searchResult)
-	const searchValue = useSelector((state) => state.searchValue.searchValue)
-
-	// console.log(searchResult)
-	// console.log(searchValue)
-
-	// useEffect(() => {
-	// 	dispatch(contentAction.setSearchResult(searchValue))
-	// }, [dispatch, searchValue])
 
 	useEffect(() => {
-		// console.log(query.get('keyword'))
 		dispatch(contentAction.setSearchResult(query.get('q')))
-	}, [])
+	}, [dispatch, query])
 
 	return (
 		<Container>
