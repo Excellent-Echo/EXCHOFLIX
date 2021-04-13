@@ -10,16 +10,18 @@ const SearchBar = () => {
 	let history = useHistory()
 	const searchValue = useSelector((state) => state.searchValue.searchValue)
 
-	const handleForm = (e) => {
+	console.log(searchValue)
+
+	const HandleForm = (e) => {
 		e.preventDefault()
 		dispatch(contentAction.setSearchResult(searchValue))
 		dispatch(contentAction.setSearch(''))
-		history.push(`/search-result?query=${searchValue}`)
+		history.push(`/search-result?q=${searchValue}`)
 	}
 
 	return (
 		<div>
-			<Form inline onSubmit={handleForm}>
+			<Form inline onSubmit={HandleForm}>
 				<FormControl
 					type="text"
 					placeholder="Search"
