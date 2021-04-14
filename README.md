@@ -8,6 +8,7 @@
 
 ## API
 - https://developers.themoviedb.org/3/getting-started/introduction
+- -https://newsapi.org/
 - https://mockapi.io
 
 ## MVP
