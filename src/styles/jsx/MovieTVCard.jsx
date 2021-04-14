@@ -11,6 +11,7 @@ export const CardWrapper = styled(Card)`
 
 export const CardImage = styled(Card.Img)`
 	width: 92px;
+	height: 138px;
 	object-fit: cover;
 	border-radius: 12px 0px 0px 12px;
 `
@@ -20,10 +21,14 @@ export const CardTitle = styled(Card.Text)`
 	line-height: 1.2em;
 	font-weight: 600;
 	margin-bottom: 0px;
+	color: #000;
+	&:hover {
+		color: #01b4e4;
+	}
 `
 
 export const CardDate = styled.span`
-	color: #999;
+	color: rgba(0, 0, 0, 0.6);
 `
 
 export const CardOverview = styled.p`

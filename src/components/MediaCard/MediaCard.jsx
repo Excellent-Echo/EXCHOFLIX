@@ -44,8 +44,8 @@ const MediaCard = ({ value, index }) => {
 				</div>
 
 				<div style={{ width: '154px' }}>
-					<CardTitle>{value.original_title ? value.original_title : value.name}</CardTitle>
-					<CardDate>{value.release_date}</CardDate>
+					<CardTitle>{value.original_title ? value.title : value.name}</CardTitle>
+					<CardDate>{value.media_type === 'movie' ? value.release_date : value.first_air_date}</CardDate>
 				</div>
 			</Card>
 		</div>
