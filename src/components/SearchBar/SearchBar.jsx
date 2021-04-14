@@ -10,8 +10,6 @@ const SearchBar = () => {
 	let history = useHistory()
 	const searchValue = useSelector((state) => state.searchValue.searchValue)
 
-	console.log(searchValue)
-
 	const HandleForm = (e) => {
 		e.preventDefault()
 		dispatch(contentAction.setSearchResult(searchValue))

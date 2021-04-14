@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Nav, Container, Row, Col } from 'react-bootstrap'
+import { Nav, Container, Row, Col, Badge } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom'
 
 import contentAction from '../redux/actions/contentAction'
@@ -18,7 +18,7 @@ const SearchResult = () => {
 
 	useEffect(() => {
 		dispatch(contentAction.setSearchResult(query.get('q')))
-	}, [dispatch, query])
+	}, [query, dispatch])
 
 	return (
 		<Container>
@@ -27,13 +27,18 @@ const SearchResult = () => {
 				<Col sm={2}>
 					<Nav variant="pills" defaultActiveKey="/home" className="flex-column">
 						<Nav.Item>
-							<Nav.Link href="/home">Movie</Nav.Link>
+							<Nav.Link href="/home">All</Nav.Link>
 						</Nav.Item>
 						<Nav.Item>
-							<Nav.Link eventKey="link-1">TV</Nav.Link>
+							<Nav.Link eventKey="link-1">
+								Movie<Badge variant="light">9</Badge>
+							</Nav.Link>
 						</Nav.Item>
 						<Nav.Item>
-							<Nav.Link eventKey="link-2">People</Nav.Link>
+							<Nav.Link eventKey="link-2">TV</Nav.Link>
+						</Nav.Item>
+						<Nav.Item>
+							<Nav.Link eventKey="link-3">People</Nav.Link>
 						</Nav.Item>
 					</Nav>
 				</Col>
@@ -42,9 +47,9 @@ const SearchResult = () => {
 					{searchResult &&
 						searchResult.map((value, index) => {
 							return value.media_type === 'movie' || value.media_type === 'tv' ? (
-								<MovieTV value={value} index={index} key={index} />
+								<MovieTV value={value} index={index} />
 							) : (
-								<People value={value} index={index} key={index} />
+								<People value={value} index={index} />
 							)
 						})}
 				</Col>

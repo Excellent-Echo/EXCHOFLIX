@@ -12,6 +12,10 @@ export const CardTitle = styled(Card.Text)`
 	font-size: 1em;
 	font-weight: 600;
 	margin-bottom: 0px;
+	color: #000;
+	&:hover {
+		color: #01b4e4;
+	}
 `
 
 export const CardKnownFor = styled.p`

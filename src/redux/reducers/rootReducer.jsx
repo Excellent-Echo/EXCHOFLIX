@@ -9,6 +9,8 @@ import airingTodayTVShowsReducer from './TVShows/airingTodayTVShowsReducer'
 import onTheAirTVShowsReducer from './TVShows/onTheAirTVShowsReducer'
 import searchReducer from './searchReducer'
 import searchResultReducer from './searchResultReducer'
+import detailReducer from './detailReducer'
+import newsReducer from './newsReducer'
 
 const rootReducer = {
 	trending: trendingReducer,
@@ -21,7 +23,9 @@ const rootReducer = {
 	airingTodayTVShows: airingTodayTVShowsReducer,
 	onTheAirTVShows: onTheAirTVShowsReducer,
 	searchValue: searchReducer,
-	searchResult: searchResultReducer
+	searchResult: searchResultReducer,
+	detail: detailReducer,
+	news: newsReducer
 }
 
 export default rootReducer

@@ -16,6 +16,7 @@ import TopRatedTVShows from './pages/TVShows/TopRatedTVShows'
 
 import Footer from './components/Footer/Footer.jsx'
 import SearchResult from './pages/SearchResult'
+import Details from './pages/Details'
 
 function App() {
 	return (
@@ -23,9 +24,6 @@ function App() {
 			<Router>
 				<Header />
 				<Switch>
-					<Route path="/search-result">
-						<SearchResult />
-					</Route>
 					<Route path="/popular-tv-shows">
 						<PopularTVShows />
 					</Route>
@@ -50,6 +48,10 @@ function App() {
 					<Route path="/popular-movies">
 						<PopularMovies />
 					</Route>
+					<Route path="/search-result">
+						<SearchResult />
+					</Route>
+					<Route path="/:category/:id/:title" children={<Details />} />
 					<Route path="/">
 						<Home />
 					</Route>
