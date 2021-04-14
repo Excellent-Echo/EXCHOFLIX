@@ -12,8 +12,9 @@
 - https://mockapi.io
 
 ## MVP
-- Show movies/tv series in home,category and details page
-- Search movies/tv series/person
+- Show film / tv series on main page and details
+- Displays news related to the film / tv series
+- Search feature for film / tv series / people
 - Implement a subscription system. When the subscription period expires, the customer will no longer be able to view the content
 
 ## URL
