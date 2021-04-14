@@ -38,6 +38,16 @@ const Details = styled(Jumbotron)`
 		text-shadow: 0 0 3px #000;
 	}
 
+	.crew {
+		font-weight: bold;
+		margin: 0;
+	}
+
+	.job_crew {
+		font-size: 0.9em;
+		margin: 0;
+	}
+
 	h2 {
 		color: #fff;
 		font-weight: 700;

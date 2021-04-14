@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+
 import contentAction from '../../redux/actions/contentAction'
 import MediaCard from '../../components/MediaCard/MediaCard'
 
@@ -18,14 +20,23 @@ const PopularMovies = () => {
 				<h2>ini error</h2>
 			) : content ? (
 				content.map((value, index) => {
-					return <MediaCard value={value} key={index} />
-					// return <h1>{value.title}</h1>
+					return (
+						<Link
+							to={
+								value.first_air_date
+									? 'tv/' + value.id.toString() + '/' + value.name
+									: 'movie/' + value.id.toString() + '/' + value.title
+							}
+							style={{ textDecoration: 'none' }}
+						>
+							<MediaCard value={value} key={index} />
+						</Link>
+					)
 				})
 			) : (
 				<h2>ini masih loading</h2>
 			)}
 		</Container>
-		// <p>ini halaman popular movies</p>
 	)
 }
 

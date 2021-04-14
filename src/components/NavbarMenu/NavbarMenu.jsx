@@ -57,10 +57,7 @@ const NavbarMenu = () => {
 							placeholder="Search"
 							className="mr-sm-2"
 							value={searchValue}
-							// onChange={handleSearchInput}
 							onChange={(e) => dispatch(contentAction.setSearch(e.target.value))}
-							// as={Link}
-							// to="/search-result?query=abcd"
 						/>
 					</Form>
 					<Nav>

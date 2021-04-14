@@ -19,23 +19,21 @@ const Trending = () => {
 		<Container>
 			<h4>Trending</h4>
 			<CardContainer>
-				{content.map((value, index) => {
-					return (
-						<Link
-							to={
-								value.media_type === 'tv'
-									? 'tv/' + value.id.toString() + '/' + value.name.replace(/ /g, '-').toLowerCase()
-									: 'movie/' +
-									  value.id.toString() +
-									  '/' +
-									  value.title.replace(/ /g, '-').toLowerCase()
-							}
-							style={{ textDecoration: 'none' }}
-						>
-							<MediaCard value={value} key={index} />
-						</Link>
-					)
-				})}
+				{content &&
+					content.map((value, index) => {
+						return (
+							<Link
+								to={
+									value.media_type === 'tv'
+										? 'tv/' + value.id.toString() + '/' + value.name
+										: 'movie/' + value.id.toString() + '/' + value.title
+								}
+								style={{ textDecoration: 'none' }}
+							>
+								<MediaCard value={value} key={index} />
+							</Link>
+						)
+					})}
 			</CardContainer>
 		</Container>
 	)

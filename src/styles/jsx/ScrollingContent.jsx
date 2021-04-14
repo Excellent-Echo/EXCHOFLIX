@@ -4,10 +4,20 @@ import { Container, Card } from 'react-bootstrap'
 export const CardContainer = styled(Container)`
 	display: flex;
 	overflow-x: auto;
+	overflow-y: hidden;
+	margin-bottom: 3rem;
+	height: 100%;
 `
 
 export const CardImage = styled(Card.Img)`
 	width: 154px;
+	border-radius: 12px;
+`
+
+export const CastImage = styled(Card.Img)`
+	width: 138px;
+	height: 175px;
+	object-fit: cover;
 	border-radius: 12px;
 `
 

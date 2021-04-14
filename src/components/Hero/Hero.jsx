@@ -1,5 +1,5 @@
 import React from 'react'
-import { Jumbotron, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 import JumbotronStyles from '../../styles/jsx/JumbotronStyles'
 
