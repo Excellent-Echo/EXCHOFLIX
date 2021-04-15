@@ -51,7 +51,9 @@ const Header = () => {
 					</Nav>
 					<SearchBar as={Link} to="/search-result" />
 					<Nav>
-						<Nav.Link href="#signin">Sign In</Nav.Link>
+						<Nav.Link as={Link} to="/login">
+							Sign In
+						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>

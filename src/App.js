@@ -17,6 +17,7 @@ import TopRatedTVShows from './pages/TVShows/TopRatedTVShows'
 import Footer from './components/Footer/Footer.jsx'
 import SearchResult from './pages/SearchResult'
 import Details from './pages/Details'
+import Login from './pages/Login'
 
 function App() {
 	return (
@@ -52,6 +53,9 @@ function App() {
 						<SearchResult />
 					</Route>
 					<Route path="/:category/:id/:title" children={<Details />} />
+					<Route path="/login">
+						<Login />
+					</Route>
 					<Route path="/">
 						<Home />
 					</Route>
