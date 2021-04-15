@@ -19,8 +19,6 @@ const Details = () => {
 	)
 	const { news } = useSelector((state) => state.news)
 
-	console.log(news)
-
 	useEffect(() => {
 		dispatch(contentAction.setDetails(category, id))
 		dispatch(contentAction.setNews(category, title))

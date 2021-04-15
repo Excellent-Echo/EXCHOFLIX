@@ -17,7 +17,8 @@ import {
 	SET_DETAILS,
 	SET_LOADING,
 	SET_ERROR,
-	SET_NEWS
+	SET_NEWS,
+	SET_HOME_NEWS
 } from '../actionTypes/contentActionTypes'
 
 const setTrending = () => async (dispatch) => {
@@ -250,6 +251,26 @@ const setNews = (media_type, title) => async (dispatch) => {
 	}
 }
 
+const setHomeNews = () => async (dispatch) => {
+	try {
+		const homeNews = await axios({
+			method: 'get',
+			url: `https://newsapi.org/v2/everything?q=Hollywood&sortBy=popularity&apiKey=cec95f9fa86f4e08957e92eb4c81ee8a`
+		})
+
+		console.log(homeNews)
+
+		dispatch({
+			type: SET_HOME_NEWS,
+			payload: {
+				homeNews: homeNews.data.articles
+			}
+		})
+	} catch (error) {
+		console.log(error)
+	}
+}
+
 const setDetails = (media_type, media_id) => async (dispatch) => {
 	try {
 		dispatch({
@@ -321,7 +342,8 @@ const contentAction = {
 	setSearch,
 	setSearchResult,
 	setDetails,
-	setNews
+	setNews,
+	setHomeNews
 }
 
 export default contentAction
