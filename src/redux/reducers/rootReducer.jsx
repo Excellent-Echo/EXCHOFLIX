@@ -11,6 +11,7 @@ import searchReducer from './searchReducer'
 import searchResultReducer from './searchResultReducer'
 import detailReducer from './detailReducer'
 import newsReducer from './newsReducer'
+import homeNewsReducer from './homeNewsReducer'
 
 const rootReducer = {
 	trending: trendingReducer,
@@ -25,7 +26,8 @@ const rootReducer = {
 	searchValue: searchReducer,
 	searchResult: searchResultReducer,
 	detail: detailReducer,
-	news: newsReducer
+	news: newsReducer,
+	homeNews: homeNewsReducer
 }
 
 export default rootReducer
