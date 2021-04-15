@@ -22,8 +22,8 @@ const Details = () => {
 	console.log(news)
 
 	useEffect(() => {
-		dispatch(contentAction.setDetails(category, id, title))
-		dispatch(contentAction.setNews(title))
+		dispatch(contentAction.setDetails(category, id))
+		dispatch(contentAction.setNews(category, title))
 	}, [dispatch, category, id, title])
 
 	return (
